@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexia Fontaine - Animatrice du patrimoine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2a6d81;
+            --secondary: #1d4954;
+            --light: #f6f9fc;
+            --dark: #334756;
+            --accent: #90c5b5;
+            --accent-light: #c9dfd6;
+            --accent-dark: #336b78;
+            --text: #333;
+            --text-light: #666;
+            --shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background-color: var(--light);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--dark);
+            letter-spacing: 0.3px;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            color: var(--text);
+        }
+        
+        a {
+            color: var(--accent-dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--accent);
+        }
+        
+        /* Container & Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        .section {
+            padding: 70px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-alternate {
+            background-color: white;
+        }
+        
+        .section-title-container {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+        
+        .section-title:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            color: var(--accent-dark);
+            font-weight: 400;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 100px 0 70px;
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .header-title {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .header-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .header-cta {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-cta:hover {
+            background-color: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            color: white;
+        }
+        
+        /* About */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-text {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            color: white;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, auto);
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .skill-category {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-category h3 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .skill-category h3 i {
+            margin-right: 15px;
+            color: var(--accent);
+        }
+        
+        .skill-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .skill-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-list li:before {
+            content: '✓';
+            color: var(--accent-dark);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-title {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .tag {
+            background-color: var(--accent-light);
+            color: var(--dark);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            transition: var(--transition);
+        }
+        
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background-color: var(--accent-light);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            display: flex;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-content {
+            width: 45%;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .timeline-content:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            transform: rotate(45deg);
+            z-index: -1;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content:before {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content:before {
+            left: -10px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background-color: var(--accent);
+            border: 4px solid var(--accent-light);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Fit For Role Section */
+        .fit-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .fit-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .fit-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fit-item i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .fit-item h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        /* Mission section */
+        .mission-flow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .mission-step {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .mission-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mission-step:not(:last-child):after {
+            content: '→';
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: var(--accent);
+        }
+        
+        @media (max-width: 768px) {
+            .mission-step:not(:last-child):after {
+                content: '↓';
+                position: absolute;
+                bottom: -25px;
+                left: 50%;
+                top: auto;
+                right: auto;
+                transform: translateX(-50%);
+            }
+        }
+        
+        .mission-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-item i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        /* Project Large Card */
+        .project-card-large {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            margin-bottom: 40px;
+        }
+        
+        .project-card-large:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-card-content {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .project-card-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        .project-card-text {
+            flex: 2;
+            padding: 30px;
+        }
+        
+        .project-card-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 30px;
+        }
+        
+        .project-card-title {
+            margin: 0;
+            color: white;
+        }
+        
+        .project-results {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--accent-light);
+        }
+        
+        .result-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .result-icon {
+            width: 30px;
+            height: 30px;
+            background-color: var(--accent-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .result-icon i {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                flex-direction: row !important;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content:before,
+            .timeline-item:nth-child(even) .timeline-content:before {
+                left: -10px;
+                right: auto;
+            }
+            
+            .timeline-dot {
+                left: 30px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .project-card-content {
+                flex-direction: column;
+            }
+            
+            .project-card-image {
+                max-width: 100%;
+            }
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 0;
+            padding: 15px 0;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        nav a:hover {
+            color: var(--accent);
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <h1 class="header-title">Alexia Fontaine</h1>
+            <p class="header-subtitle">Médiation culturelle | Archéologie | Ingénierie pédagogique</p>
+            <p class="header-subtitle">Candidate au poste d'Animatrice du patrimoine 
+            <br> Centre des Monuments Nationaux</p>
+            <a href="#contact" class="header-cta">Me contacter</a>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">Présentation</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#missions">Missions CMN</a></li>
+                <li><a href="#projects">Réalisations</a></li>
+                <li><a href="#experience">Expérience</a></li>
+                <li><a href="#fit">Adéquation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Présentation -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title-container">
+                <p class="section-subtitle">Présentation</p>
+                <h2 class="section-title">Passion pour le patrimoine & innovation pédagogique</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="img/AF-Profil6.jpg" alt="Alexia Fontaine">
+                </div>
+                <div class="about-text">
+                    <h3>De l'archéologie à la médiation patrimoniale numérique</h3>
+                    <p>Archéologue de formation avec un Master en Humanités numériques spécialisé en ingénierie pédagogique, je combine une expertise scientifique avec des compétences avancées en médiation culturelle et outils numériques.</p>
+                    
+                    <p>Mon parcours m'a menée de la fouille archéologique à la conception d'outils pédagogiques innovants, en passant par la géomatique appliquée à l'archéologie. Cette diversité d'expériences me permet d'appréhender le patrimoine sous différents angles : scientifique, technique et pédagogique.</p>
+                    
+                    <p>Ma récente expérience en ingénierie pédagogique au Centre Hospitalier de Dreux m'a permis de développer des compétences essentielles dans la conception d'ateliers, l'animation de groupes et l'adaptation pédagogique selon les publics - compétences directement transférables à l'animation patrimoniale.</p>
+                    
+                    <p>Passionnée par la transmission du patrimoine, j'anime un blog scientifique sur la plateforme Hypothèses et développe des outils de communication numérique, démontrant ma capacité à rendre accessible des contenus complexes et à innover dans les pratiques de médiation.</p>
+                    
+                    <p>Le poste d'Animatrice du patrimoine au Centre des Monuments Nationaux représente pour moi l'opportunité parfaite de concilier ma passion pour l'histoire et l'archéologie avec mes compétences en ingénierie pédagogique, pour créer des expériences de médiation patrimoniale enrichissantes et innovantes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compétences -->
+    <section class="section section-alternate" id="skills">
+        <div class="container">
+            <div class="section-title-container">
+                <p class="section-subtitle">Expertise</p>
+                <h2 class="section-title">Compétences pour la médiation patrimoniale</h2>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-university"></i> Expertise patrimoniale</h3>
+                    <ul class="skill-list">
+                        <li>Master en Archéologie (Paris 1 Panthéon-Sorbonne)</li>
+                        <li>Spécialisation en géomatique appliquée au patrimoine</li>
+                        <li>Connaissance de l'histoire de l'art et de l'architecture</li>
+                        <li>Expérience terrain en archéologie préventive (INRAP)</li>
+                        <li>Maîtrise des SIG et cartographie patrimoniale (SRA)</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-users-cog"></i> Animation & médiation</h3>
+                    <ul class="skill-list">
+                        <li>Conception d'ateliers pédagogiques adaptés</li>
+                        <li>Animation de groupes scolaires et grand public</li>
+                        <li>Adaptation pédagogique selon les publics cibles</li>
+                        <li>Vulgarisation scientifique et communication</li>
+                        <li>Expérience d'enseignement (histoire-géographie)</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Outils numériques & innovation</h3>
+                    <ul class="skill-list">
+                        <li>Conception de supports multimédias et e-learning</li>
+                        <li>Administration de plateformes LMS et CMS</li>
+                        <li>Création de parcours découverte numériques</li>
+                        <li>Animation d'un blog scientifique (Hypothèses)</li>
+                        <li>Automatisation de génération de contenus</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-chart-line"></i> Gestion & organisation</h3>
+                    <ul class="skill-list">
+                        <li>Planification et organisation d'activités culturelles</li>
+                        <li>Gestion de projets pédagogiques</li>
+                        <li>Coordination avec équipes et prestataires</li>
+                        <li>Évaluation et amélioration continue</li>
+                        <li>Veille scientifique et patrimoniale</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Missions CMN -->
+    <section class="section" id="missions">
+        <div class="container">
+            <div class="section-title-container">
+                <p class="section-subtitle">Objectifs</p>
+                <h2 class="section-title">Missions d'animation patrimoniale</h2>
+            </div>
+
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">Le poste d'Animatrice du patrimoine au Centre des Monuments Nationaux implique des missions variées autour de la médiation culturelle et de la valorisation des monuments historiques comme le château de Châteaudun et la cathédrale de Chartres.</p>
+
+            <div class="mission-flow">
+                <div class="mission-step">
+                    <i class="fas fa-users mission-icon"></i>
+                    <h3>Accueil & encadrement</h3>
+                    <p>Accueillir et encadrer différents publics (scolaires, familles, personnes en situation de handicap) en adaptant le discours et l'approche pédagogique à chaque groupe.</p>
+                </div>
+                
+                <div class="mission-step">
+                    <i class="fas fa-route mission-icon"></i>
+                    <h3>Animation de visites</h3>
+                    <p>Animer des visites thématiques in situ, à distance et hors les murs, en valorisant l'histoire, l'architecture et le patrimoine des monuments.</p>
+                </div>
+                
+                <div class="mission-step">
+                    <i class="fas fa-tools mission-icon"></i>
+                    <h3>Ateliers pédagogiques</h3>
+                    <p>Concevoir et animer des ateliers artistiques et scientifiques adaptés aux thématiques des monuments et aux différents publics.</p>
+                </div>
+            </div>
+
+            <div class="mission-flow">
+                <div class="mission-step">
+                    <i class="fas fa-lightbulb mission-icon"></i>
+                    <h3>Conception d'offres</h3>
+                    <p>Participer à l'élaboration de l'offre éducative : création de parcours découverte, ateliers du patrimoine et supports de visite innovants.</p>
+                </div>
+                
+                <div class="mission-step">
+                    <i class="fas fa-file-alt mission-icon"></i>
+                    <h3>Supports pédagogiques</h3>
+                    <p>Rédiger des supports de visite et créer des outils pédagogiques adaptés aux différents publics et aux spécificités de chaque monument.</p>
+                </div>
+                
+                <div class="mission-step">
+                    <i class="fas fa-heart mission-icon"></i>
+                    <h3>Connaissance des publics</h3>
+                    <p>Développer une connaissance fine des publics et de leurs attentes pour adapter en permanence l'offre de médiation patrimoniale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projets -->
+    <section class="section section-alternate" id="projects">
+        <div class="container">
+            <div class="section-title-container">
+                <p class="section-subtitle">Réalisations</p>
+                <h2 class="section-title">Projets en médiation et patrimoine</h2>
+            </div>
+            
+            <!-- Projet 1 -->
+            <div class="project-card-large">
+                <div class="project-card-header">
+                    <h3 class="project-card-title">Blog scientifique et Newsletter automatisée</h3>
+                </div>
+                <div class="project-card-content">
+                    <img src="img/Process_COPE.png" alt="Newsletter Technique" class="project-card-image">
+                    <div class="project-card-text">
+                        <div class="project-tags" style="margin-bottom: 20px;">
+                            <span class="tag">Vulgarisation scientifique</span>
+                            <span class="tag">Markdown</span>
+                            <span class="tag">GitHub</span>
+                            <span class="tag">Automatisation</span>
+                        </div>
+                        
+                        <p><strong>Contexte :</strong> Création et animation d'un blog scientifique (carnet Hypothèses) et d'une newsletter hebdomadaire automatisée pour partager des contenus de médiation scientifique.</p>
+                        
+                        <p><strong>Mission :</strong> Développer une présence en ligne permettant la diffusion régulière de contenus de médiation scientifique et pédagogique à destination de différents publics.</p>
+                        
+                        <p><strong>Actions :</strong> Mise en place d'une architecture modulaire avec écriture en Markdown, développement d'un système d'automatisation de génération de contenus depuis les dépôts GitHub, création de templates adaptés aux différents types de contenus.</p>
+                        
+                        <a href="https://archnum.hypotheses.org/" target="_blank" class="btn" style="margin-right: 10px; margin-bottom: 10px;">Blog scientifique ARCHNUM</a>
+
+                        <a href="https://siasia-dev.github.io/portfolio-newsletter/latest.html" target="_blank" class="btn" style="margin-right: 10px; margin-bottom: 10px;">Voir la newsletter</a>
+
+                        <div class="project-results">
+                            <h4>Compétences démontrées :</h4>
+                            <div class="result-item">
+                                <div class="result-icon">
+                                    <i class="fas fa-feather-alt"></i>
+                                </div>
+                                <p>Capacité à vulgariser des concepts scientifiques complexes</p>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <p>Maîtrise des outils d'automatisation pour la diffusion de contenus</p>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <p>Animation d'une communauté d'intérêt autour de thématiques scientifiques</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+                    <!-- Projet 2 -->
+                    <div class="project-card-large">
+                        <div class="project-card-header">
+                            <h3 class="project-card-title">Conception de parcours pédagogiques modulaires</h3>
+                        </div>
+                        <div class="project-card-content">
+                            <img src="img/ParcoursPedago.jpg" alt="Modules E-learning" class="project-card-image">
+                            <div class="project-card-text">
+                                <div class="project-tags" style="margin-bottom: 20px;">
+                                    <span class="tag">E-learning</span>
+                                    <span class="tag">Scénarisation pédagogique</span>
+                                    <span class="tag">Contenus interactifs</span>
+                                    <span class="tag">Formation</span>
+                                </div>
+                                
+                                <p><strong>Contexte :</strong> Développement de formations modulaires avec des contraintes fortes de disponibilité et d'accessibilité des contenus. 
+                                    Gestion de LMS et CMS, nous nous appuyons sur ces expériences pour scénariser nos contenus.</p>
+                                
+                                <p><strong>Mission :</strong> Concevoir et médiatiser des modules pédagogiques adaptés aux besoins spécifiques des différentes équipes, en garantissant leur qualité et leur accessibilité.</p>
+                                
+                                <p><strong>Actions :</strong> Analyse des besoins de formation, scénarisation des parcours d'apprentissage, développement de contenus interactifs, création d'une FAQ interactive, mise en place d'un système d'évaluation et d'accompagnement.</p>
+                    
+                        <div class="project-results">
+                                    <h4>Compétences démontrées :</h4>
+                                    <div class="result-item">
+                                        <div class="result-icon">
+                                            <i class="fas fa-list-alt"></i>
+                                        </div>
+                                        <p>Adaptation des contenus pédagogiques à différents publics</p>
+                                    </div>
+                                    <div class="result-item">
+                                        <div class="result-icon">
+                                            <i class="fas fa-laptop-code"></i>
+                                        </div>
+                                        <p>Médiatisation et intégration de contenus techniques</p>
+                                    </div>
+                                    <div class="result-item">
+                                        <div class="result-icon">
+                                            <i class="fas fa-user-graduate"></i>
+                                        </div>
+                                        <p>Conception d'outils pédagogiques innovants et accessibles</p>
+                                    </div>
+                                </div>
+
+                                <h3 style="text-align: center; margin: 60px 0 30px;">Projets Réalisés</h3>
+
+
+                                <div class="projects-grid">
+                                        <div class="project-card">
+                                        <img src="img/Slowsia.jpg" alt="Modules E-learning" class="project-card-image">
+                                        <div class="project-content">
+                                            <h3 class="project-title">Portfolio</h3>
+                                            <div class="projects-tags">
+                                                <span class="tag">UX Design</span>
+                                                <span class="tag">Pédagogie</span>
+                                                <span class="tag">Communication</span>
+                                            </div>
+                                            <p>Le portfolio est un outil de formation qui permet de présenter et structurer nos parcours professionnels de plus en plus variés :</p>
+                                            <ul>
+                                                <li>Un journal de bord numérique et interactif</li>
+                                                <li>Développement d'une application appliquant le principe COPE</li>
+                                            </ul><br>
+                                            <p><a class="btn" href="https://archnum.hypotheses.org/1344" target="_blank">Lien vers article sur Hypothèses</a></p>
+                                            <p><a class="btn" href="https://portfolio-af-v2.netlify.app/" target="_blank">Accès à notre portfolio</a></p>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="project-card">
+                                        <img src="img/carto-visuelle.jpg" alt="Modules E-learning" class="project-card-image">
+                                        <div class="project-content">
+                                            <h3 class="project-title">Cartographie visuelle</h3>
+                                            <div class="projects-tags">
+                                                <span class="tag">UX Design</span>
+                                                <span class="tag">NLP</span>
+                                                <span class="tag">E-learning</span>
+                                            </div>
+                                            <p>Une analyse de données géospatiales explorant les possibilités d'un jeu de données archéologiques selon le modèle de transport optimal.</p>
+                                            <p>Une visualisation basée sur les principes de la cartographique visuelle :</p>
+                                            <ul>
+                                                <li>Prédiction de sites archéologiques selon les périodes</li>
+                                                <li>Optimisation de la distance</li>
+                                            </ul><br>
+                                            <p><a class="btn" href="https://viz-mto.netlify.app/" target="_blank">Accès à la Visualisation</a></p>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="project-card">
+                                        <img src="img/161457musee-d.martin--vue-generale-du-tresor-deauze2.jpg" alt="Trésor d'Eauze" class="project-card-image">
+                                        <div class="project-content">
+                                            <h3 class="project-title">Le Trésor d'Eauze</h3>
+                                            <div class="project-tags">
+                                                <span class="tag">Modélisation 3D</span>
+                                                <span class="tag">Médiation Culturelle</span>
+                                                <span class="tag">Narration Web</span>
+                                            </div>
+                                            <p>Valorisation du patrimoine culturel à travers une expérience numérique interactive combinant modélisation 3D, photographie et rédaction de contenus historiques. Ce projet illustre ma capacité à créer des expériences d'apprentissage immersives.</p>
+                                            <a href="https://tresor-eauze.netlify.app/"  class="btn" style="margin-right: 10px; margin-bottom: 10px;">Accéder à l'application</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="project-card">
+                                        <img src="img/Reliquiae.jpg" alt="Intelligence Artificielle & Pédagogie" class="project-card-imagee">
+                                        <div class="project-content">
+                                            <h3 class="project-title">Intelligence Artificielle & Pédagogie</h3>
+                                            <div class="project-tags">
+                                                <span class="tag">IA Générative</span>
+                                                <span class="tag">Chatbot Éducatif</span>
+                                                <span class="tag">Personnalisation</span>
+                                            </div>
+                                            <p>Développement d'un agent conversationnel pédagogique basé sur un personnage historique, démontrant l'application des techniques de traitement du langage naturel pour créer des expériences éducatives interactives et personnalisées.</p>
+                                            <a href="https://avatar-lartet.streamlit.app/"  class="btn" style="margin-right: 10px; margin-bottom: 10px;">Accéder à l'application</a>
+                                        </div>
+                                    </div>
+
+                                    
+                                        <div class="project-card">
+                                            <img src="img/FAQ DM.png" alt="Modules E-learning" class="project-card-image">
+                                            <div class="project-content">
+                                                <h3 class="project-title">FAQ interactive & intelligente</h3>
+                                                <div class="project-tags">
+                                                        <span class="tag">Scénarisation pédagogique</span>
+                                                        <span class="tag">Contenus interactifs</span>
+                                                        <span class="tag">Formation</span>
+                                                </div>
+                                                <p>Création et optimisation de supports de formation pour de la remédiation de connaissances, démontrant ma capacité à transformer des contenus complexes en ressources pédagogiques claires et accessibles.</p>
+                                                <a href="https://faq-desinfection.onrender.com"  class="btn" style="margin-right: 10px; margin-bottom: 10px;">Accéder à l'application</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                        <div class="project-card">
+                                            <img src="img/NumPy_logo_2020.svg.png" alt="Quiz Interactif" class="project-card-image">
+                                            <div class="project-content">
+                                                <h3 class="project-title">Apprentissage Interactif</h3>
+                                                <div class="project-tags">
+                                                    <span class="tag">NLP</span>
+                                                    <span class="tag">E-learning</span>
+                                                    <span class="tag">Gamification</span>
+                                                </div>
+                                                <p>Conception d'un quiz interactif pour tester et approfondir les connaissances en manipulation de données, illustrant mon approche de l'apprentissage dynamique. Ce projet combine apprentissage ludique et concepts techniques avancés.</p>
+                                                <a href="https://quiz-numpy.streamlit.app/"  class="btn" style="margin-right: 10px; margin-bottom: 10px;">Accéder à l'application</a>
+                                            </div>
+                                        </div>
+                        </div>
+                    </div>
+                </div>
+            
+
+            <!-- Projet 4 -->
+            <div class="project-card-large">
+                <div class="project-card-header">
+                    <h3 class="project-card-title">Ateliers d'apprentissage interactifs</h3>
+                </div>
+                <div class="project-card-content">
+                    <img src="img/dream-job-4453054_640.jpg" alt="Ateliers interactifs" class="project-card-image">
+                    <div class="project-card-text">
+                        <div class="project-tags" style="margin-bottom: 20px;">
+                            <span class="tag">Animation de groupe</span>
+                            <span class="tag">Pédagogie</span>
+                            <span class="tag">Outils numériques</span>
+                            <span class="tag">Accompagnement</span>
+                        </div>
+                        
+                        <p><strong>Contexte :</strong> Développement d'ateliers thématiques combinant approches pédagogiques traditionnelles et outils numériques pour faciliter l'acquisition de compétences.
+                        De notre expérience en tant qu'ingénieure pédagohgique et notre formation en analyse de données nous permet de mettre en place des tableaux de bord</p>
+                        
+                        <p><strong>Mission :</strong> Concevoir et animer des ateliers collectifs adaptés aux besoins des participants, en intégrant des outils numériques facilitant l'apprentissage.</p>
+                        
+                        <p><strong>Actions :</strong> Élaboration d'un programme pédagogique complet, création de supports interactifs, mise en place d'exercices pratiques, développement d'outils numériques d'aide à l'apprentissage.</p>
+                        
+                        <a href="https://app-atelier-emploi.streamlit.app/" target="_blank"  class="btn" style="margin-right: 10px; margin-bottom: 10px;">Prototype Journal d'apprentissage</a>
+                        <a href="https://app-matching-emploi.streamlit.app/" class="btn" style="margin-right: 10px; margin-bottom: 10px;">Démo Matching'Emploi: profil jeune - offre d'emploi</a>
+                        <br><i>Note : compte STREAMLIT nécessaire, le temps de chargement peut être long</i>
+
+                        <div class="project-results">
+                            <h4>Compétences démontrées :</h4>
+                            <div class="result-item">
+                                <div class="result-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <p>Animation de groupes et adaptation aux dynamiques collectives</p>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-icon">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <p>Intégration d'outils numériques dans des parcours pédagogiques</p>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <p>Évaluation et ajustement des dispositifs pédagogiques</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <!-- Expérience Professionnelle -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-title-container">
+                <p class="section-subtitle">Parcours</p>
+                <h2 class="section-title">Expérience en médiation et patrimoine</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="timeline-date">2021 - 2022</p>
+                        <h3 class="timeline-title">Ingénieure hospitalier-pédagogique</h3>
+                        <p>Centre Hospitalier de Dreux</p>
+                        <ul>
+                            <li>Conception et animation d'ateliers pédagogiques</li>
+                            <li>Création de modules e-learning et supports multimédias</li>
+                            <li>Administration de plateformes LMS</li>
+                            <li>Accompagnement et formation d'utilisateurs</li>
+                            <li>Adaptation pédagogique selon les publics</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="timeline-date">2017</p>
+                        <h3 class="timeline-title">Conceptrice pédagogique – Rédactrice web</h3>
+                        <p>CULTUR'MOUV</p>
+                        <ul>
+                            <li>Élaboration de méthodologies de narration culturelle</li>
+                            <li>Développement de supports pédagogiques</li>
+                            <li>Vulgarisation de contenus patrimoniaux</li>
+                            <li>Conception de parcours de découverte</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="timeline-date">2009 - 2010</p>
+                        <h3 class="timeline-title">Assistante de ressources documentaires scientifiques</h3>
+                        <p>INRAP / Université de Franche-Comté</p>
+                        <ul>
+                            <li>Gestion de bases de données patrimoniales</li>
+                            <li>Médiation entre ressources et utilisateurs</li>
+                            <li>Mise en place de chaînes éditoriales</li>
+                            <li>Valorisation de données archéologiques</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="timeline-date">2001</p>
+                        <h3 class="timeline-title">Enseignante d'histoire-géographie</h3>
+                        <p>Collège privé Taremen (Îles Loyautés)</p>
+                        <ul>
+                            <li>Enseignement adapté au contexte multiculturel</li>
+                            <li>Développement de supports pédagogiques innovants</li>
+                            <li>Animation de projets éducatifs patrimoniaux</li>
+                            <li>Sensibilisation au patrimoine local</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="timeline-date">Depuis 2018</p>
+                        <h3 class="timeline-title">Médiation scientifique continue</h3>
+                        <p>Blog scientifique et communication numérique</p>
+                        <ul>
+                            <li>Animation d'un blog spécialisé en archéologie numérique</li>
+                            <li>Création de contenus de vulgarisation</li>
+                            <li>Animation de communautés scientifiques</li>
+                            <li>Veille et partage d'innovations patrimoniales</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Adéquation avec le poste -->
+    <section class="section section-alternate" id="fit">
+        <div class="container">
+            <div class="section-title-container">
+                <p class="section-subtitle">Positionnement</p>
+                <h2 class="section-title">Adéquation avec le poste d'Animatrice du patrimoine</h2>
+            </div>
+            
+            <h3 style="text-align: center; margin-bottom: 30px;">Comment mon profil répond aux exigences du Centre des Monuments Nationaux</h3>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px;">Le poste d'Animatrice du patrimoine demande une combinaison unique de connaissances patrimoniales, de compétences pédagogiques et d'innovation dans les pratiques de médiation. Mon parcours pluridisciplinaire s'aligne parfaitement avec ces exigences :</p>
+            
+            <div class="fit-content">
+                <div class="fit-item">
+                    <i class="fas fa-university"></i>
+                    <h3>Formation académique solide</h3>
+                    <p>Mes Masters en Archéologie et Archéomatique (Paris 1, Tours) me donnent une expertise scientifique reconnue en histoire, archéologie et histoire de l'art, socle indispensable pour la médiation patrimoniale au CMN.</p>
+                </div>
+                
+                <div class="fit-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Expérience pédagogique confirmée</h3>
+                    <p>Mon Master en Humanités numériques spécialisé en ingénierie pédagogique, complété par une expérience pratique d'animation d'ateliers, me permet de concevoir et animer des activités adaptées à tous les publics (scolaires, familles, handicap).</p>
+                </div>
+                
+                <div class="fit-item">
+                    <i class="fas fa-users"></i>
+                    <h3>Adaptation aux publics variés</h3>
+                    <p>Mon expérience d'enseignement en contexte multiculturel et mes compétences en adaptation pédagogique me permettent de répondre aux attentes spécifiques de chaque public, une compétence clé pour l'animation patrimoniale.</p>
+                </div>
+                
+                <div class="fit-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovation en médiation numérique</h3>
+                    <p>Ma maîtrise des outils numériques et mon expérience en création de contenus multimédias m'permettent de développer des approches innovantes pour enrichir l'offre éducative des monuments (parcours numériques, ateliers interactifs).</p>
+                </div>
+                
+                <div class="fit-item">
+                    <i class="fas fa-map"></i>
+                    <h3>Connaissance du patrimoine local</h3>
+                    <p>Ma formation en géomatique appliquée au patrimoine et ma connaissance des enjeux de conservation me donnent une vision globale des monuments historiques, utile pour contextualiser les animations et sensibiliser à la préservation.</p>
+                </div>
+                
+                <div class="fit-item">
+                    <i class="fas fa-heart"></i>
+                    <h3>Passion communicative</h3>
+                    <p>Ma pratique personnelle de la médiation scientifique via mon blog et ma newsletter démontre une passion authentique pour la transmission des savoirs patrimoniaux, qualité essentielle pour une animatrice du patrimoine inspirante.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px; padding: 30px; background-color: var(--accent-light); border-radius: 10px;">
+                <h3 style="color: var(--primary); margin-bottom: 20px;">Ma vision pour l'animation patrimoniale</h3>
+                <p><strong>Créer des expériences de médiation patrimoniale qui conjuguent rigueur scientifique, innovation pédagogique et accessibilité pour tous les publics. Développer des outils numériques participatifs qui enrichissent la découverte des monuments tout en respectant leur authenticité historique.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title-container">
+                <p class="section-subtitle">Contact</p>
+                <h2 class="section-title">Me Contacter</h2>
+            </div>
+            <div class="contact-content" style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <p style="margin-bottom: 30px;">Je serais ravie d'échanger avec vous sur ma candidature au poste d'Animatrice du patrimoine et de vous présenter ma vision de la médiation patrimoniale innovante et accessible.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>fontaine.alexia8@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-car"></i>
+                        <span>Permis B - Véhiculée</span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px;">
+                    <a href="https://www.linkedin.com/in/alexiafontaine" target="_blank" class="header-cta" style="margin-right: 15px; margin-bottom: 10px;">
+                        <i class="fab fa-linkedin" style="margin-right: 10px;"></i>LinkedIn
+                    </a>
+                    <a href="https://portfolio-af-v2.netlify.app/" target="_blank" class="header-cta" style="margin-right: 15px; margin-bottom: 10px;">
+                        <i class="fas fa-briefcase" style="margin-right: 10px;"></i>Portfolio
+                    </a>
+                    <a href="https://archnum.hypotheses.org/" target="_blank" class="header-cta" style="margin-bottom: 10px;">
+                        <i class="fas fa-book" style="margin-right: 10px;"></i>Blog scientifique
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p style="margin-bottom: 20px; color: white;">© 2025 Alexia Fontaine - Candidature Animatrice du patrimoine - Centre des Monuments Nationaux</p>
+            <p style="color: rgba(255,255,255,0.7);">Patrimoine • Innovation pédagogique • Médiation</p>
+        </div>
+    </footer>
+</body>
+</html>
